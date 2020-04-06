@@ -6,38 +6,28 @@
 {% endblock %}
 
 {% block content %}
+    
     <section>
         <div class="info" id="footer">
             <h1>Cursos da Rocketseat</h1>
         </div>
-    
+
         <div class="content-grid">
-            <div class="content" id="starter">
-                <img src="/img/starter.svg" alt="Starter">
-                <h2>Starter</h2>
+            {% for item in items %}
+            <div class="content" id="{{item.id}}">
+                <img src="/img/{{item.picture}}" alt="{{item.title}}">
+                <h2>{{item.title}}</h2>
                 <ul>
-                    <li>Número de módulos: 14</li>
-                    <li>Gratuito</li>
+                    <li>Número de módulos: {{item.modules}}</li>
+                    <li>{{item.price}}</li>
                 </ul>
             </div>
-            <div class="content" id="launchbase">
-                <img src="/img/launchbase.svg" alt="LaunchBase">
-                <h2>LaunchBase</h2>
-                <ul>
-                    <li>Número de módulos: 33</li>
-                    <li>Pago</li>
-                </ul>
-            </div>
-            <div class="content" id="gostack">
-                <img src="/img/gostack.svg" alt="GoStack">
-                <h2>GoStack</h2>
-                <ul>
-                    <li>Número de módulos: 109</li>
-                    <li>Pago</li>
-                </ul>
-            </div>
+            {% endfor %}
         </div>
+        
+
     </section>
+    
 
     <div id="footer" class="links">
         <a href="https://discordapp.com/invite/gCRAFhc" target="_blank">GitHub</a>

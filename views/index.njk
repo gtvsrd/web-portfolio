@@ -16,4 +16,26 @@
         <a href="https://www.linkedin.com/in/gustavorodriguespr/" target="_blank">Linkedin</a>
     </div>
 
+    <section>
+        <div class="info" id="footer">
+            <h1>Projetos do GitHub</h1>
+        </div>
+    
+        <div class="content-grid">
+
+            {% for item in items %}
+            <div class="content" id="starter">
+                <img src="/img/{{item.picture}}" alt="{{item.title}}">
+                <h2>{{item.title}}</h2>
+                <ul>
+                    <li>Descrição: {{item.description}}</li>
+                    <li>Link para o projeto: {{item.link}}</li>
+                    <li>Tecnologias utilizadas: {{item.tech}}</li>
+                </ul>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
 {% endblock %}

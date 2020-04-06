@@ -2,24 +2,27 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 
 const server = express();
+const profile = require("./profile");
+const content = require("./content");
 
 server.use(express.static('public'));
 server.set("view engine", "njk");
 
 nunjucks.configure("views", {
-    express: server
+    express: server,
+    autoescape: false
 })
 
 server.get('/', (req, res) => {
-    res.render("index");
+    return res.render("index", { items: profile });
 });
 
 server.get('/sobre', (req, res) => {
-    res.render("sobre");
+    return res.render("sobre");
 });
 
 server.get('/conteudos', (req, res) => {
-    res.render("conteudos");
+    return res.render("conteudos", { items: content });
 });
 
 server.use(function(req, res) {
