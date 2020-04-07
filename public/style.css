@@ -110,6 +110,16 @@ ul {
     margin-bottom: 20px;
 }
 
+.content.solo {
+    margin: 32px auto;
+    text-align: center;
+    max-width: 400px;
+    padding: 32px;
+    filter: brightness(90%);
+    border: 2px solid var(--color-detail);
+    background-color: #252733;
+}
+
 /*        MODAL        */
 
 .modal-overlay {
