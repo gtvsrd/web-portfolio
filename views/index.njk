@@ -20,22 +20,56 @@
         <div class="info" id="footer">
             <h1>Projetos do GitHub</h1>
         </div>
-    
+        <!--
         <div class="content-grid">
 
-            {% for item in items %}
+            
             <div class="content" id="starter">
-                <img src="/img/{{item.picture}}" alt="{{item.title}}">
-                <h2>{{item.title}}</h2>
+                <img src="" alt="{{item.title}}">
+                <h2></h2>
                 <ul>
-                    <li>Descrição: {{item.description}}</li>
-                    <li>Link para o projeto: {{item.link}}</li>
-                    <li>Tecnologias utilizadas: {{item.tech}}</li>
+                    <li>Descrição: </li>
+                    <li>Link para o projeto: </li>
+                    <li>Tecnologias utilizadas: </li>
                 </ul>
             </div>
-            {% endfor %}
+            
 
         </div>
+        -->
     </section>
+    
+    <div class="content-grid">
+    {% for item in items %}
+    <div class="card">
+        <section class="avatar">
+            <img src="/img/{{item.picture}}" alt="">
+        </section>
+        <section class="details">
+
+            <h3>{{item.title}}</h3>
+
+            <div class="item">
+                <div>Descrição</div>
+                <div>{{item.description}}</div>
+            </div>
+
+            <div class="item">
+                <div>Link</div>
+                <div>{{item.link}}</div>
+            </div>
+
+            <div class="item">
+                <div>Tecnologias utilizadas:</div>
+                <div>
+                    {% for tech in item.tech %}
+                    <span>{{tech}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+    {% endfor %}
+    </div>
 
 {% endblock %}
